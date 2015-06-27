@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "BrewHounds",
+            "location": "East US"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "BrewHounds_db",
+                "serverName": "y04uddcquz",
+                "user": "brewhound",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "East US 2"
+            }
+        ]
+    }
+}
