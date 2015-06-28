@@ -9,65 +9,29 @@
 }
 
 
-    <p>
+    @*<p>
         @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Volume)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Origin)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brewery)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th></th>
-        </tr>
+    </p>*@
     
-    @foreach (var item in Model) {
-        <tr>
+            @foreach (var item in Model) {
+                <div class="col-md-3 beersDetail">
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Volume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Origin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brewery)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
+                   <img src="@Url.Content(item.Image)" />
+                    
+                    <h4>@Html.DisplayFor(modelItem => item.Name)</h4>
+
+                    <p class="itemDesc">@Html.DisplayFor(modelItem => item.Description)</p>
+
+                    <h4><strong>$@Html.DisplayFor(modelItem => item.Price)</strong></h4>
+
+                    <p>@Html.ActionLink("View", "Details", new { id = item.Id }, new {@class= "btn btn-default"})</p>
+            
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+               </div>
     }
+
+<div class="clearfix visible-xs-block"></div>
     
-    </table>
+    

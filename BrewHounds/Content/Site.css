@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 30px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,39 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.beersDetail {
+    margin-bottom: 15px;
+}
+
+.beersDetail img {
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beersDetail .btn.btn-default {
+    display: block;
+    width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.beersDetail h4:last-of-type, .featured h4 {
+    text-align: center;
+}
+
+p.itemDesc {
+    height: 260px;
+}
+
+.beersDetail h4:first-of-type {
+    height: 40px;
+}
+
+footer p {
+    text-align: center;
+    font-weight: bold;
 }
