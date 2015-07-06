@@ -2,6 +2,8 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int qtyTotal = 0;
 }
 
 <!DOCTYPE html>
@@ -12,9 +14,6 @@
     <title>Index</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
     <table class="table">
         <tr>
             <th>
@@ -27,24 +26,35 @@
         </tr>
     
     @foreach (var item in Model) {
+
+        qtyTotal = qtyTotal + Int32.Parse(item.Quantity);
+
+        
+        
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Quantity)
+
+                
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Beer.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Beer.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
                 @Html.ActionLink("Delete", "Delete", new { id=item.Id })
             </td>
         </tr>
+        
+        
     }
-    
+    <tr>
+        <td>Total Quantity:</td>
+        <td colspan="2">@(qtyTotal)</td>
+    </tr>
+        
+
     </table>
 </body>
 </html>
