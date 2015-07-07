@@ -1,0 +1,189 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Checkout</h1>
+<form action="~/Home/Confirmation" method="post">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Shipping Information</h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input id="ShipFName" name="ShipFName" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input id="ShipFName" name="ShipFName" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input id="ShipAddress1" name="ShipAddress1" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input id="ShipAddress2" name="ShipAddress2" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Province/Territory:</label>
+                    <select name="ShipProvince" id="ShipProvince" class="form-control">
+                        <option>Select...</option>
+                        <option value="ÄB">Alberta</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="MB">Manitoba</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="NL">Newfoundland</option>
+                        <option value="NS">Nova Scotia</option>
+                        <option value="ON">Ontario</option>
+                        <option value="PE">Prince Edward Island</option>
+                        <option value="QC">Quebec</option>
+                        <option value="SK">Saskatchewan</option>
+                        <option value="NT">Northwest Terriroties</option>
+                        <option value="NU">Nunavut</option>
+                        <option value="YT">Yukon</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Postal Code:</label>
+                    <input id="ShipPostalCode" name="ShipPostalCode" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number:</label>
+                    <input id="ShipPhone" name="ShipPhone" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Billing Information</h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label>First Name:</label>
+                    <input id="BillFName" name="BillFName" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name:</label>
+                    <input id="BillLName" name="BillLName" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input id="BillAddress1" name="BillAddress1" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input id="BillAddress2" name="BillAddress2" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Province/Territory:</label>
+                    <select name="BillProvince" id="BillProvince" class="form-control">
+                        <option>Select...</option>
+                        <option value="ÄB">Alberta</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="MB">Manitoba</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="NL">Newfoundland</option>
+                        <option value="NS">Nova Scotia</option>
+                        <option value="ON">Ontario</option>
+                        <option value="PE">Prince Edward Island</option>
+                        <option value="QC">Quebec</option>
+                        <option value="SK">Saskatchewan</option>
+                        <option value="NT">Northwest Terriroties</option>
+                        <option value="NU">Nunavut</option>
+                        <option value="YT">Yukon</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Postal Code:</label>
+                    <input id="BillPostalCode" name="BillPostalCode" type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number:</label>
+                    <input id="BillBillPhone" name="Phone" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix visible-xs-block"></div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment Information</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Card Type:</label>
+                <select name="CardType" id="CardType" class="form-control">
+                    <option>Select...</option>
+                    <option value="Visa">Visa</option>
+                    <option value="MC">MasterCard</option>
+                    <option value="Discover">Discover</option>
+                    <option value="AMEX">American Express</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Card Number:</label>
+                <input id="CardNum" name="CardNum" type="text" class="form-control" />
+            </div>
+            <h4>Card Expiry:</h4>
+            <div class="form-group">
+                <label>Month</label>
+                <select name="CardType" id="CardType" class="form-control">
+                    <option>MM</option>
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Year</label>
+                <select name="CardType" id="CardType" class="form-control">
+                    <option>YY</option>
+                    <option value="1">2015</option>
+                    <option value="2">2016</option>
+                    <option value="3">2017</option>
+                    <option value="4">2018</option>
+                    <option value="5">2019</option>
+                    <option value="6">2020</option>
+                    <option value="7">2021</option>
+                    <option value="8">2022</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Card Name:</label>
+                <input id="CardName" name="CardName" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Card Security Number:</label>
+                <input id="CVV" name="CVV" type="text" class="form-control" />
+            </div>
+        </div>
+    </div>
+    
+    <input type="submit" class="btn btn-default" value="Place Order" />
+</form>

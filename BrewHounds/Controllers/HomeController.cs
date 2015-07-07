@@ -26,5 +26,15 @@ namespace BrewHounds.Controllers
 
             return View();
         }
+
+        public ActionResult Checkout()
+        {
+            return View();
+        }
+
+        public ActionResult Confirmation()
+        {
+            return View();
+        }
     }
 }
