@@ -2,6 +2,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     ViewBag.Title = "Order Confirmation";
+
+    Random rand = new Random((int)DateTime.Now.Ticks);
+    int orderNumber = 0;
+    orderNumber = rand.Next(100000000, 999999999);
 }
 
 <div class="panel panel-default">
@@ -10,6 +14,7 @@
     </div>
     <div class="panel-body">
         <h2>Order Completed</h2>
+        <h4>Your order number is BH@(orderNumber)</h4>
         <p>Your order has been completed. Thanks for shopping with us.</p>
         <a href="~/Home/" class="btn btn-default">Return to Home</a>
     </div>
