@@ -12,7 +12,7 @@ namespace BrewHounds.Controllers
 {
     public class BeersController : Controller
     {
-        private TheBrewHoundsEntities db = new TheBrewHoundsEntities();
+        private BrewHoundEntities2 db = new BrewHoundEntities2();
 
         // GET: Beers
         public ActionResult Index()

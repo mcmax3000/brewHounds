@@ -16,7 +16,7 @@ namespace BrewHounds.Models
     {
         public int Id { get; set; }
         public Nullable<int> ItemID { get; set; }
-        public string Quantity { get; set; }
+        public Nullable<int> Quantity { get; set; }
         public string User { get; set; }
     
         public virtual Beer Beer { get; set; }

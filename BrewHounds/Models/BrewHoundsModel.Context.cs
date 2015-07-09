@@ -13,10 +13,10 @@ namespace BrewHounds.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TheBrewHoundsEntities : DbContext
+    public partial class BrewHoundEntities2 : DbContext
     {
-        public TheBrewHoundsEntities()
-            : base("name=TheBrewHoundsEntities")
+        public BrewHoundEntities2()
+            : base("name=BrewHoundEntities2")
         {
         }
     

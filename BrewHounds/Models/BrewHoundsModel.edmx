@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BrewHoundsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BrewHoundModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Beers">
           <Key>
             <PropertyRef Name="Id" />
@@ -19,39 +19,40 @@
           <Property Name="Description" Type="varchar(max)" />
           <Property Name="Image" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="ShoppingCart">
+        <EntityType Name="ShoppingCarts">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ItemID" Type="int" />
-          <Property Name="Quantity" Type="nchar" MaxLength="10" />
+          <Property Name="Quantity" Type="int" />
           <Property Name="User" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_ShoppingCart_ToItem">
+        <Association Name="FK_ShoppingCarts_ToID">
           <End Role="Beers" Type="Self.Beers" Multiplicity="0..1" />
-          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <End Role="ShoppingCarts" Type="Self.ShoppingCarts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Beers">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShoppingCart">
+            <Dependent Role="ShoppingCarts">
               <PropertyRef Name="ItemID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BrewHoundsModelStoreContainer">
+        <EntityContainer Name="BrewHoundModelStoreContainer">
           <EntitySet Name="Beers" EntityType="Self.Beers" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ShoppingCart_ToItem" Association="Self.FK_ShoppingCart_ToItem">
+          <EntitySet Name="ShoppingCarts" EntityType="Self.ShoppingCarts" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ShoppingCarts_ToID" Association="Self.FK_ShoppingCarts_ToID">
             <End Role="Beers" EntitySet="Beers" />
-            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+            <End Role="ShoppingCarts" EntitySet="ShoppingCarts" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BrewHoundsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BrewHoundModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Beer">
           <Key>
             <PropertyRef Name="Id" />
@@ -64,8 +65,8 @@
           <Property Name="Brewery" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ShoppingCarts" Relationship="Self.FK_ShoppingCart_ToTable" FromRole="Beers" ToRole="ShoppingCart" />
           <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ShoppingCarts" Relationship="Self.FK_ShoppingCarts_ToID" FromRole="Beers" ToRole="ShoppingCarts" />
         </EntityType>
         <EntityType Name="ShoppingCart">
           <Key>
@@ -73,28 +74,28 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ItemID" Type="Int32" />
-          <Property Name="Quantity" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Beer" Relationship="Self.FK_ShoppingCart_ToTable" FromRole="ShoppingCart" ToRole="Beers" />
+          <Property Name="Quantity" Type="Int32" />
           <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Beer" Relationship="Self.FK_ShoppingCarts_ToID" FromRole="ShoppingCarts" ToRole="Beers" />
         </EntityType>
-        <Association Name="FK_ShoppingCart_ToTable">
+        <Association Name="FK_ShoppingCarts_ToID">
           <End Role="Beers" Type="Self.Beer" Multiplicity="0..1" />
-          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <End Role="ShoppingCarts" Type="Self.ShoppingCart" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Beers">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="ShoppingCart">
+            <Dependent Role="ShoppingCarts">
               <PropertyRef Name="ItemID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="TheBrewHoundsEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BrewHoundEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Beers" EntityType="Self.Beer" />
           <EntitySet Name="ShoppingCarts" EntityType="Self.ShoppingCart" />
-          <AssociationSet Name="FK_ShoppingCart_ToTable" Association="Self.FK_ShoppingCart_ToTable">
+          <AssociationSet Name="FK_ShoppingCarts_ToID" Association="Self.FK_ShoppingCarts_ToID">
             <End Role="Beers" EntitySet="Beers" />
-            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
+            <End Role="ShoppingCarts" EntitySet="ShoppingCarts" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -102,11 +103,10 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BrewHoundsModelStoreContainer" CdmEntityContainer="TheBrewHoundsEntities">
+        <EntityContainerMapping StorageEntityContainer="BrewHoundModelStoreContainer" CdmEntityContainer="BrewHoundEntities2">
           <EntitySetMapping Name="Beers">
-            <EntityTypeMapping TypeName="BrewHoundsModel.Beer">
+            <EntityTypeMapping TypeName="BrewHoundModel.Beer">
               <MappingFragment StoreEntitySet="Beers">
-                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Volume" ColumnName="Volume" />
@@ -115,16 +115,17 @@
                 <ScalarProperty Name="Brewery" ColumnName="Brewery" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ShoppingCarts">
-            <EntityTypeMapping TypeName="BrewHoundsModel.ShoppingCart">
-              <MappingFragment StoreEntitySet="ShoppingCart">
-                <ScalarProperty Name="User" ColumnName="User" />
+            <EntityTypeMapping TypeName="BrewHoundModel.ShoppingCart">
+              <MappingFragment StoreEntitySet="ShoppingCarts">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ItemID" ColumnName="ItemID" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="User" ColumnName="User" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

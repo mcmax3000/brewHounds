@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="17e404652d654beaaee811069e86be88" Name="Diagram1">
-        <EntityTypeShape EntityType="BrewHoundsModel.Beer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BrewHoundsModel.ShoppingCart" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <AssociationConnector Association="BrewHoundsModel.FK_ShoppingCart_ToTable" ManuallyRouted="false" />
+      <Diagram DiagramId="f7ad2dcf37a5443a9cea779acd3c8d67" Name="Diagram1">
+        <EntityTypeShape EntityType="BrewHoundModel.Beer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BrewHoundModel.ShoppingCart" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="BrewHoundModel.FK_ShoppingCarts_ToID" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
