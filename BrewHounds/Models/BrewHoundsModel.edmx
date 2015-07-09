@@ -26,8 +26,9 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ItemID" Type="int" />
           <Property Name="Quantity" Type="nchar" MaxLength="10" />
+          <Property Name="User" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_ShoppingCart_ToTable">
+        <Association Name="FK_ShoppingCart_ToItem">
           <End Role="Beers" Type="Self.Beers" Multiplicity="0..1" />
           <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
           <ReferentialConstraint>
@@ -42,7 +43,7 @@
         <EntityContainer Name="BrewHoundsModelStoreContainer">
           <EntitySet Name="Beers" EntityType="Self.Beers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ShoppingCart_ToTable" Association="Self.FK_ShoppingCart_ToTable">
+          <AssociationSet Name="FK_ShoppingCart_ToItem" Association="Self.FK_ShoppingCart_ToItem">
             <End Role="Beers" EntitySet="Beers" />
             <End Role="ShoppingCart" EntitySet="ShoppingCart" />
           </AssociationSet>
@@ -74,6 +75,7 @@
           <Property Name="ItemID" Type="Int32" />
           <Property Name="Quantity" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Beer" Relationship="Self.FK_ShoppingCart_ToTable" FromRole="ShoppingCart" ToRole="Beers" />
+          <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_ShoppingCart_ToTable">
           <End Role="Beers" Type="Self.Beer" Multiplicity="0..1" />
@@ -119,6 +121,7 @@
           <EntitySetMapping Name="ShoppingCarts">
             <EntityTypeMapping TypeName="BrewHoundsModel.ShoppingCart">
               <MappingFragment StoreEntitySet="ShoppingCart">
+                <ScalarProperty Name="User" ColumnName="User" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ItemID" ColumnName="ItemID" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />

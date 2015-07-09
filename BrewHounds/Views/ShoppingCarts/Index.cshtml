@@ -5,7 +5,7 @@
 
     ViewBag.Title = "Shopping Cart";
 
-    int qtyTotal = 0;
+    decimal total = 0;
 }
 
 <!DOCTYPE html>
@@ -19,31 +19,37 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Beer.Name)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th colspan="2">
+                @Html.DisplayNameFor(model => model.Beer.Price)
+            </th>
         </tr>
-    
-    @foreach (var item in Model) {
 
-        qtyTotal = qtyTotal + Int32.Parse(item.Quantity);
+    @foreach (var item in Model) {
+        
+        if()
+
+
+        total = total + (item.Beer.Price.Value * int.Parse(item.Quantity));
 
         
         
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-
-                
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Beer.Name)
             </td>
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Beer.Price)
+            </td>
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
                 @Html.ActionLink("Delete", "Delete", new { id=item.Id })
             </td>
@@ -52,8 +58,8 @@
         
     }
     <tr>
-        <td>Total Quantity:</td>
-        <td colspan="2">@(qtyTotal)</td>
+        <td colspan="2"><strong>Total Price:</strong></td>
+        <td colspan="2">$@(total.ToString("0.00"))</td>
     </tr>
         
 

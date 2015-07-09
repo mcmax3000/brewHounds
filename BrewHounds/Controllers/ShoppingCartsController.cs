@@ -17,8 +17,12 @@ namespace BrewHounds.Controllers
         // GET: ShoppingCarts
         public ActionResult Index()
         {
-            var shoppingCarts = db.ShoppingCarts.Include(s => s.Beer);
-            return View(shoppingCarts.ToList());
+            //var shoppingCarts = db.ShoppingCarts.Include(s => s.Beer);
+            //return View(shoppingCarts.ToList());
+
+            var model = from r in db.ShoppingCarts where r.User == User.Identity.Name select r;
+
+            return View(model);
         }
 
         // GET: ShoppingCarts/Details/5
@@ -47,7 +51,7 @@ namespace BrewHounds.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Id,ItemID,Quantity")] ShoppingCart shoppingCart)
+        public ActionResult Create([Bind(Include = "Id,ItemID,Quantity,User")] ShoppingCart shoppingCart)
         {
             if (ModelState.IsValid)
             {
