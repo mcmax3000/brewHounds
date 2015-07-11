@@ -216,11 +216,14 @@
     <Content Include="Images\AmsterdamDowntown.jpg" />
     <Content Include="Images\BeausLugTread.jpg" />
     <Content Include="Images\BeausTomGreen.jpg" />
+    <Content Include="Images\beer-masthead.jpg" />
+    <Content Include="Images\dog.png" />
     <Content Include="Images\FlyingMonkeyChocolate.jpg" />
     <Content Include="Images\GreatLakesCanuck.jpg" />
     <Content Include="Images\InnisGunnLager.jpg" />
     <Content Include="Images\InnisGunnToastedOak.jpg" />
     <Content Include="Images\LesTroisMousq.jpg" />
+    <Content Include="Images\logo.png" />
     <Content Include="Images\MillStreet100.jpg" />
     <Content Include="Images\MuskokaMadTom.jpg" />
     <Content Include="Images\PyramidOutburst.jpg" />
