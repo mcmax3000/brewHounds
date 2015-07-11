@@ -1,6 +1,17 @@
-﻿body {
+﻿@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300);
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avro', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -47,7 +58,8 @@ textarea {
 }
 
 p.itemDesc {
-    height: 260px;
+    height: 140px;
+    margin-top: 30px;
 }
 
 .beersDetail h4:first-of-type {
