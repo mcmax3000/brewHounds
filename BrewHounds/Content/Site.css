@@ -2,16 +2,16 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300);
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Avro', serif;
     font-weight: 700;
     text-transform: uppercase;
-    text-align: center;
 }
 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3ee;
+    color: #333;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -36,7 +36,7 @@ textarea {
 }
 
 .beersDetail {
-    margin-bottom: 15px;
+    margin-bottom: 80px;
 }
 
 .beersDetail img {
@@ -44,9 +44,12 @@ textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 4px;
 }
 
-.beersDetail .btn.btn-default {
+.beersDetail .btn {
     display: block;
     width: 120px;
     margin-left: auto;
@@ -57,8 +60,12 @@ textarea {
     text-align: center;
 }
 
+.beersDetail h4 {
+    text-align: center;    
+}
+
 p.itemDesc {
-    height: 140px;
+    height: 120px;
     margin-top: 30px;
 }
 
@@ -69,4 +76,33 @@ p.itemDesc {
 footer p {
     text-align: center;
     font-weight: bold;
+}
+
+.page-topper {
+    font-size: 40px;
+    text-align: center;
+}
+
+.navbar-default {
+    color: #333 !important;
+    background-color: #eee;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #ccc;
+}
+
+.jumbotron {
+    text-align: center;
+    background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.2), 
+      rgba(0, 0, 0, 0.4)
+    ),url(../Images/beer-masthead.jpg);
+     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.jumbotron img {
+    width: 700px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

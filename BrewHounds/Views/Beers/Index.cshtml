@@ -12,20 +12,24 @@
     @*<p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
-    
+    <h2 class="page-topper">
+        Beer Warehouse
+    </h2>
+    <hr />
+    <br /><br />
             @foreach (var item in Model) {
                 <div class="col-md-3 beersDetail">
 
-                   <img src="@Url.Content(item.Image)" />
-                    
                     <h4>@Html.DisplayFor(modelItem => item.Name)</h4>
-
-                    <p class="itemDesc">@Html.DisplayFor(modelItem => item.Description)</p>
+                    <hr />
+                   <img src="@Url.Content(item.Image)" />
 
                     <h4><strong>$@Html.DisplayFor(modelItem => item.Price)</strong></h4>
 
-                    <p>@Html.ActionLink("View", "Details", new { id = item.Id }, new {@class= "btn btn-default"})</p>
+                    <p>@Html.ActionLink("View", "Details", new { id = item.Id }, new {@class= "btn btn-danger"})</p>
             
+                    <p class="itemDesc">@Html.DisplayFor(modelItem => item.Description)</p>
+
                     @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
 
                     @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
