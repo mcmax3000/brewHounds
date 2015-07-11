@@ -23,7 +23,7 @@
         <hr />
 
         <div class="col-md-3">
-            <img src="@Url.Content(Model.Image)" height="300" />
+            <img class="detail-img" src="@Url.Content(Model.Image)" height="300" />
         </div>
 
         <div class="col-md-7">
@@ -39,7 +39,7 @@
                     <input type="hidden" id="ItemID" name="ItemID" value="@Html.DisplayFor(model => model.Id)">
                     <label>Quantity:</label>
                     <input id="Quantity" name="Quantity" type="text" class="form-control" />
-                    <input type="submit" class="btn btn-default" value="Add to Cart" />
+                    <input type="submit" class="btn btn-danger" value="Add to Cart" />
                 </form>
              }
              else

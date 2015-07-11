@@ -4,6 +4,7 @@
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -49,6 +50,12 @@ textarea {
     border-radius: 4px;
 }
 
+.detail-img {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
 .beersDetail .btn {
     display: block;
     width: 120px;
@@ -85,7 +92,7 @@ footer p {
 
 .navbar-default {
     color: #333 !important;
-    background-color: #eee;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-bottom: 1px solid #ccc;
 }
@@ -98,6 +105,7 @@ footer p {
       rgba(0, 0, 0, 0.4)
     ),url(../Images/beer-masthead.jpg);
      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+     margin-bottom: 75px;
 }
 
 .jumbotron img {
@@ -105,4 +113,9 @@ footer p {
     height: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
 }
