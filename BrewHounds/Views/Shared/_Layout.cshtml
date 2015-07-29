@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("Shop Beers", "Index", "Beers")</li>
                     <!--<li>@Html.ActionLink("About Us", "About", "Home")</li>-->
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                    <li><a href="http://www.github.com/mcmax3000/brewhounds">GitHub</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -33,10 +34,11 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Brew Hound</p>
-        </footer>
+        
     </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Brew Hound</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

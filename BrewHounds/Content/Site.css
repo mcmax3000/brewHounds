@@ -20,6 +20,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 30px;
+    min-height: 800px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -118,4 +119,17 @@ footer p {
 .col-centered {
     float: none;
     margin: 0 auto;
+}
+
+.table.cartTable tr.cartItem td {
+    line-height: 150px;
+}
+
+.cartTotal {
+    text-align: right;
+}
+
+.beersDetail h4 a, .beersDetail h4 a:hover {
+    color: #333333;
+    text-decoration: none;
 }
