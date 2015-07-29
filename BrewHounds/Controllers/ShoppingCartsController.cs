@@ -16,13 +16,13 @@ namespace BrewHounds.Controllers
 
         // GET: ShoppingCarts
         public ActionResult Index()
-        {
-            //var shoppingCarts = db.ShoppingCarts.Include(s => s.Beer);
+        { 
+            var shoppingCarts = db.ShoppingCarts.Where(s => s.User ==  User.Identity.Name);
             //return View(shoppingCarts.ToList());
 
-            var model = from r in db.ShoppingCarts where r.User == User.Identity.Name select r;
+            //var model = from r in db.ShoppingCarts where r.User == User.Identity.Name select r;
 
-            return View(model);
+            return View(shoppingCarts);
         }
 
         // GET: ShoppingCarts/Details/5
