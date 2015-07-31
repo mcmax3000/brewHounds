@@ -14,12 +14,14 @@ namespace BrewHounds.Controllers
     {
         private BrewHoundEntities2 db = new BrewHoundEntities2();
 
+        [AllowAnonymous]
         // GET: Beers
         public ActionResult Index()
         {
             return View(db.Beers.ToList());
         }
 
+        [AllowAnonymous]
         // GET: Beers/Details/5
         public ActionResult Details(int? id)
         {
