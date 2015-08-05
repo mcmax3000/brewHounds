@@ -23,17 +23,16 @@ namespace BrewHounds
 
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
-            var serializerSettings =
-   GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings;
+            var serializerSettings = GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings;
             var contractResolver = (DefaultContractResolver)serializerSettings.ContractResolver;
             contractResolver.IgnoreSerializableAttribute = true;
             
 
         }
-        /*protected void Application_BeginRequest() 
+        protected void Application_BeginRequest() 
         { 
             if (!Context.Request.IsSecureConnection) 
                 Response.Redirect(Context.Request.Url.ToString().Replace("http:", "https:")); 
-        }*/
+        }
     }
 }

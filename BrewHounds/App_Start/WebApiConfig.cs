@@ -19,10 +19,6 @@ namespace BrewHounds
             );
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-
-            //var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
-            //json.UseDataContractJsonSerializer = true;
-
         }
     }
 }
