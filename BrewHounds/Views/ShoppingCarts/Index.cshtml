@@ -6,6 +6,7 @@
     ViewBag.Title = "Shopping Cart";
 
     decimal total = 0;
+    decimal itemTotal;
 }
 
 <!DOCTYPE html>
@@ -38,8 +39,8 @@
         //if (User.Identity.Name != "") {
 
 
-        total = (item.Beer.Price.Value * item.Quantity.Value);
-
+        total = total + (item.Beer.Price.Value * item.Quantity.Value);
+        itemTotal = (item.Beer.Price.Value * item.Quantity.Value);
 
         <tr class="cartItem">
             <td><img class="detail-img" src="@Url.Content(item.Beer.Image)" height="150" /></td>
@@ -50,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
-                $@total.ToString("0.00")
+                $@itemTotal.ToString("0.00")
                 @*Html.DisplayFor(modelItem => item.Beer.Price)*@
             </td>
             <td>
