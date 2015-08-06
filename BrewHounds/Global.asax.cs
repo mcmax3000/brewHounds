@@ -29,10 +29,10 @@ namespace BrewHounds
             
 
         }
-        /*protected void Application_BeginRequest() 
+        protected void Application_BeginRequest() 
         { 
             if (!Context.Request.IsSecureConnection) 
                 Response.Redirect(Context.Request.Url.ToString().Replace("http:", "https:")); 
-        }*/
+        }
     }
 }
