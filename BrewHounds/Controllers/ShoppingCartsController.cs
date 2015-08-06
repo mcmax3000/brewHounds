@@ -18,9 +18,6 @@ namespace BrewHounds.Controllers
         public ActionResult Index()
         { 
             var shoppingCarts = db.ShoppingCarts.Where(s => s.User ==  User.Identity.Name);
-            //return View(shoppingCarts.ToList());
-
-            //var model = from r in db.ShoppingCarts where r.User == User.Identity.Name select r;
 
             return View(shoppingCarts);
         }
